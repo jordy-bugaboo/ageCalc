@@ -1,12 +1,13 @@
-import { LitElement, html } from "lit";
+import { LitElement, html, unsafeCSS } from "lit";
 import { inputStyles } from "../style/css";
+import style from "../style/css-comp.scss?inline";
 
 export class AgeResult extends LitElement {
   static properties = {
     version: {},
   };
 
-  static styles = [inputStyles];
+  static styles = [inputStyles, unsafeCSS(style)];
 
   constructor() {
     super();
