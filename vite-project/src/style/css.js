@@ -1,8 +1,8 @@
-import {  css } from "https://unpkg.com/@polymer/lit-element@latest/lit-element.js?module";
+import {  css, unsafeCSS } from "lit";
 
-const globalSpacing = css`16px`;
+const globalSpacing = 32;
 const inputFontSizeNormal = css`32px`;
-const inputSize = css`150px`;
+const inputSize = css`125px`;
 
 const primaryPurple = css`hsl(259, 100%, 65%)`;
 const primaryLight = css`hsl(0, 100%, 67%)`;
@@ -24,7 +24,11 @@ export const inputStyles = css`
     justify-content: center;
     align-items: center;
     margin-right: 20%;
+  }
 
+  .c-date-result {
+    font-size: 64px;
+    font-weight: 800;
   }
 
   hr {
@@ -34,10 +38,13 @@ export const inputStyles = css`
 
   input {
     font-size: ${inputFontSizeNormal};
-    color: ${neutralSmokeyGrey};
+    color: ${neutraloffBlack};
     font-weight: 800;
-    width: ${inputSize};
+    max-width: ${inputSize};
+  }
 
+  li {
+    list-style: none;
   }
 
   label {
@@ -45,12 +52,23 @@ export const inputStyles = css`
     font-weight: 700;
   }
 
+  .o-divider-container {
+    width: 55dvw;
+  }
+
+  
   .o-divider {
-    width: 55%;
-    margin-left: 27%;
+    width: 100%;
     height: 1px;
     border: 0;
     background-color: ${neutralLightgrey};
+  }
+
+
+ 
+  ul {
+    list-style: none;
+    padding-inline-start: 0;
   }
 
   .u-flex {
@@ -71,15 +89,8 @@ export const inputStyles = css`
   }
 
   .u-flex-spacing {
-    gap: ${globalSpacing};
+    gap: ${unsafeCSS(globalSpacing + 'px')};
   }
-
-  
-
-
-
   `;
 
-  export const fonts = css`
-
-  `;
+ 
